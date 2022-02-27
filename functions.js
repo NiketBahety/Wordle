@@ -72,7 +72,7 @@ async function submitLetter(e) {
         }, 2000);
       } else if (count === 30) {
         setTimeout(function () {
-          alert(`Lost !! Word was ${originalWord}`);
+          alert(`Lost !! Word was ${originalWord}\nMeaning: ${def}`);
         }, 2000);
       }
       word = "";
