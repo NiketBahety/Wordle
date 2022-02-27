@@ -67,12 +67,12 @@ async function submitLetter(e) {
       console.log(arr);
       if (word === originalWord) {
         setTimeout(function () {
-          alert(`Victory\nMeaning: ${def}`);
+          alert("Victory");
           gameWon = true;
         }, 2000);
       } else if (count === 30) {
         setTimeout(function () {
-          alert(`Lost !! Word was ${originalWord}\nMeaning: ${def}`);
+          alert(`Lost !! Word was ${originalWord}`);
         }, 2000);
       }
       word = "";
