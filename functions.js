@@ -17,14 +17,14 @@ axios
   });
 
 async function wordCheck(word) {
-  let res;
-  res = await axios.get(
-    `https://randomwords-api.herokuapp.com/api/v1/check/${word}`
-  );
-  if (res.data.data.define.definition) {
-    console.log(res.data.data.define.definition);
-    return res.data.data.define.definition;
-  } else {
+  try {
+    let res = await axios.get(
+      `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
+    );
+    console.log(res.data[0].meanings[0].definitions[0].definition);
+    return res.data[0].meanings[0].definitions[0].definition;
+  } catch (err) {
+    console.log(err.message);
     return false;
   }
 }
@@ -42,6 +42,7 @@ function deleteLetter(e) {
 async function submitLetter(e) {
   if (count % 5 === 0 && count != 0 && word.length != 0) {
     let def = await wordCheck(word);
+    let meaning = await wordCheck(originalWord);
     if (def) {
       checked = false;
       let arr = [];
@@ -67,12 +68,12 @@ async function submitLetter(e) {
       console.log(arr);
       if (word === originalWord) {
         setTimeout(function () {
-          alert("Victory");
+          alert(`Victory\n Meaning: ${def}`);
           gameWon = true;
         }, 2000);
       } else if (count === 30) {
         setTimeout(function () {
-          alert(`Lost !! Word was ${originalWord}`);
+          alert(`Lost !! Word was ${originalWord}\nMeaning: ${meaning}`);
         }, 2000);
       }
       word = "";
