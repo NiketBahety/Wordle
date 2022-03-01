@@ -10,7 +10,7 @@ body {
 .grid {
   display: grid;
   width: 300px;
-  margin: 50px auto;
+  margin: 50px auto 0 auto;
 }
 .rows {
   display: grid;
@@ -45,4 +45,35 @@ body {
   100% {
     transform: rotateX(-180deg);
   }
+}
+
+.keyboard {
+  width: 400px;
+  height: 150px;
+  background-color: #0000006b;
+  margin: 20px auto;
+}
+.keyboard-row {
+  width: 400px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.key {
+  width: 30px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 3px;
+  border-radius: 2px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  cursor: pointer;
+}
+.key-wide {
+  width: 50px;
 }
