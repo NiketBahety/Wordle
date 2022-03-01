@@ -50,8 +50,11 @@ body {
 .keyboard {
   width: 400px;
   height: 150px;
-  background-color: #0000006b;
+  /* background-color: red; */
   margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .keyboard-row {
   width: 400px;
@@ -61,8 +64,8 @@ body {
   align-items: center;
 }
 .key {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   background-color: rgba(255, 255, 255, 0.2);
   margin: 0 3px;
   border-radius: 2px;
@@ -73,6 +76,7 @@ body {
   align-items: center;
   font-size: 18px;
   cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .key-wide {
   width: 50px;
