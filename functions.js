@@ -2,19 +2,19 @@ let count = 0;
 let checked = false;
 let word = "";
 let letters = document.getElementsByClassName("letters");
-let originalWord = "SPILL";
+let originalWord = "HAIKU";
 let gameWon = false;
 
-axios
-  .get("https://randomwords-api.herokuapp.com/api/v1/multiple?length=5")
-  .then(function (res) {
-    console.log(res.data.data.word);
-    originalWord = res.data.data.word;
-    originalWord = originalWord.toUpperCase();
-  })
-  .catch(function (err) {
-    console.log(err);
-  });
+// axios
+//   .get("https://randomwords-api.herokuapp.com/api/v1/multiple?length=5")
+//   .then(function (res) {
+//     console.log(res.data.data.word);
+//     originalWord = res.data.data.word;
+//     originalWord = originalWord.toUpperCase();
+//   })
+//   .catch(function (err) {
+//     console.log(err);
+//   });
 
 async function wordCheck(word) {
   try {
